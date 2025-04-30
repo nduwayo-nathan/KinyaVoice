@@ -1,5 +1,5 @@
 
-# 🤖 Kinyarwanda Voice Assistant
+# 🤖 KinyaVoice 
 
 An intelligent voice assistant that understands and speaks **Kinyarwanda**, developed as part of the **Intelligent Robotics** course. It combines advanced speech recognition, contextual understanding, and natural language response generation to enable real-time human-computer interaction in Kinyarwanda.
 
