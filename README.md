@@ -1,5 +1,5 @@
 
-# 🤖 KinyaVoice 
+# 🤖 KinyaVoice
 
 An intelligent voice assistant that understands and speaks **Kinyarwanda**, developed as part of the **Intelligent Robotics** course. It combines advanced speech recognition, contextual understanding, and natural language response generation to enable real-time human-computer interaction in Kinyarwanda.
 
@@ -65,8 +65,8 @@ choco install ffmpeg
 
 ```bash
 # Clone the repository
-git clone https://github.com/Chiesa14/KinyarwandaVoiceAssistant.git
-cd KinyarwandaVoiceAssistant
+git clone https://github.com/nduwayo-nathan/KinyaVoice.git
+cd KinyaVoice
 
 # Set up virtual environment
 python -m venv .venv

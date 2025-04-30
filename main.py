@@ -21,7 +21,6 @@ os.makedirs("audio_outputs", exist_ok=True)
 processor = WhisperProcessor.from_pretrained("benax-rw/KinyaWhisper")
 model = WhisperForConditionalGeneration.from_pretrained("benax-rw/KinyaWhisper")
 
-
 def transcribe_audio(audio_path):
     try:
         audio_data, _ = librosa.load(audio_path, sr=16000)
@@ -82,10 +81,8 @@ with open("nlp_mapping.json") as f:
     qa_pairs = {pair["question"]: pair["answer"] for pair in qa_data.get("qa_pairs", [])}
     default_response = qa_data.get("default_response", "I'm sorry, I don't understand.")
 
-
 def normalize(text):
     return re.sub(r'[^\w\s]', '', text.lower()).strip()
-
 
 def get_answer(question):
     normalized_question = normalize(question)
@@ -101,7 +98,6 @@ def get_answer(question):
             matched_key = key
 
     return best_answer, matched_key
-
 
 def process_audio(audio_path):
     timestamp = str(int(time.time()))
@@ -123,7 +119,6 @@ def process_audio(audio_path):
         print(f"Processing error: {e}")
         return "Error during processing", default_response, None, None
 
-
 def create_qa_reference():
     lines = ["**Supported Questions and Answers:**", f"Default Response: {default_response}\n"]
     for i, (q, a) in enumerate(qa_pairs.items(), 1):
@@ -131,10 +126,9 @@ def create_qa_reference():
         lines.append(f"   **Answer**: {a}\n")
     return "\n".join(lines)
 
-
 # Gradio UI
-with gr.Blocks(title="Kinyarwanda Voice Assistant") as demo:
-    gr.Markdown("# 🤖 Kinyarwanda Voice Assistant")
+with gr.Blocks(title="KinyaVoice") as demo:
+    gr.Markdown("# 🤖 KinyaVoice")
     gr.Markdown("Record or upload audio in Kinyarwanda to interact with the assistant.")
 
     with gr.Accordion("📚 Click to see supported questions and answers", open=False):
